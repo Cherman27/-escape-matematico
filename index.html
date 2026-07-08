@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,61 +13,86 @@
 
 <body>
 
-<div class="fondo"></div>
+<div id="inicio" class="pantalla">
 
-<div class="panel">
+    <h1>🔐 ESCAPE MATEMÁTICO</h1>
 
-<h1>🔐 ESCAPE MATEMÁTICO</h1>
+    <p>
+        El laboratorio ha sido bloqueado por un virus.
+    </p>
 
-<h2>Sistema de Seguridad</h2>
+    <p>
+        Solo los mejores matemáticos podrán recuperar el Código Maestro.
+    </p>
 
-<p class="texto">
-Laboratorio Matemático bloqueado.
-<br>
-Ingrese el Código Maestro obtenido durante la misión.
-</p>
-
-<div class="estado">
-
-<span class="rojo"></span>
-
-<span>BLOQUEADO</span>
+    <button onclick="comenzar()">
+        COMENZAR MISIÓN
+    </button>
 
 </div>
 
-<div class="temporizador">
+<div id="juego" class="pantalla oculto">
 
-⏳ Tiempo restante:
-<span id="tiempo">20:00</span>
+    <h1>🔐 ESCAPE MATEMÁTICO</h1>
+
+    <h2>Sistema de Seguridad</h2>
+
+    <p class="estado">
+        Estado:
+        <span class="bloqueado">🔴 BLOQUEADO</span>
+    </p>
+
+    <h2 id="temporizador">
+        ⏳ 20:00
+    </h2>
+
+    <div class="pregunta">
+
+        <h3 id="tituloPregunta">
+            Desafío 1
+        </h3>
+
+        <p id="textoPregunta">
+        </p>
+
+        <input
+        id="respuesta"
+        type="text"
+        placeholder="Respuesta">
+
+        <br><br>
+
+        <button onclick="verificarRespuesta()">
+            RESPONDER
+        </button>
+
+    </div>
 
 </div>
 
-<div class="codigo">
+<div id="victoria" class="pantalla oculto">
 
-<input maxlength="1" id="c1">
+    <h1>🎉 MISIÓN COMPLETADA</h1>
 
-<input maxlength="1" id="c2">
+    <h2>Laboratorio Desbloqueado</h2>
 
-<input maxlength="1" id="c3">
-
-<input maxlength="1" id="c4">
-
-<input maxlength="1" id="c5">
+    <p>
+        Felicitaciones.
+    </p>
 
 </div>
 
-<button onclick="verificarCodigo()">
+<div id="derrota" class="pantalla oculto">
 
-DESBLOQUEAR
+    <h1>💥 MISIÓN FALLIDA</h1>
 
-</button>
-
-<div id="mensaje"></div>
+    <p>
+        El tiempo terminó.
+    </p>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
