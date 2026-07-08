@@ -2,142 +2,104 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#07131d;
-    font-family:Arial, Helvetica, sans-serif;
+    background:#08131f;
+    color:white;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    color:white;
+    min-height:100vh;
 }
 
 .pantalla{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    width:90%;
+    max-width:500px;
+    padding:30px;
+    border:3px solid #00ff88;
+    border-radius:20px;
+    box-shadow:0 0 25px #00ff88;
+    text-align:center;
+    background:#111b28;
 }
 
-.tarjeta{
-
-    width:90%;
-    max-width:450px;
-
-    background:#101820;
-
-    border:3px solid #00ff99;
-
-    border-radius:15px;
-
-    padding:30px;
-
-    text-align:center;
-
-    box-shadow:0 0 25px #00ff99;
-
+.oculto{
+    display:none;
 }
 
 h1{
-
-    color:#00ff99;
-
-    margin-bottom:10px;
-
+    color:#00ff88;
+    margin-bottom:20px;
 }
 
 h2{
-
-    margin-bottom:20px;
-
-}
-
-.descripcion{
-
-    margin-bottom:20px;
-
-    line-height:25px;
-
+    margin:20px 0;
 }
 
 .estado{
-
-    font-size:20px;
-
-    margin-bottom:20px;
-
+    font-size:24px;
+    margin:20px;
 }
 
 .bloqueado{
-
     color:red;
-
     font-weight:bold;
-
 }
 
-.cronometro{
+#temporizador{
+    color:#ffd54f;
+    font-size:40px;
+    margin:25px;
+}
 
+.pregunta{
+    margin-top:25px;
+}
+
+#textoPregunta{
     font-size:22px;
-
-    margin-bottom:20px;
-
-    color:#FFD54F;
-
+    margin:20px 0;
 }
 
 input{
-
-    width:180px;
-
-    font-size:30px;
-
-    text-align:center;
-
-    padding:10px;
-
+    width:90%;
+    padding:15px;
+    font-size:22px;
     border-radius:10px;
-
     border:none;
-
-    margin-bottom:20px;
-
+    text-align:center;
 }
 
 button{
-
-    background:#00ff99;
-
-    color:black;
-
+    margin-top:20px;
+    width:90%;
+    padding:16px;
+    font-size:22px;
     border:none;
-
-    padding:15px 30px;
-
-    font-size:18px;
-
     border-radius:10px;
-
+    background:#00ff88;
     cursor:pointer;
-
     transition:.3s;
-
 }
 
 button:hover{
-
     transform:scale(1.05);
-
 }
 
-#mensaje{
+@media(max-width:600px){
 
-    margin-top:25px;
+    h1{
+        font-size:34px;
+    }
 
-    font-size:20px;
+    #temporizador{
+        font-size:34px;
+    }
 
-    font-weight:bold;
+    button{
+        font-size:20px;
+    }
 
 }
