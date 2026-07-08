@@ -1,98 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Escape Matemático</title>
 
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="inicio" class="pantalla">
+<div class="pantalla">
 
-    <h1>🔐 ESCAPE MATEMÁTICO</h1>
+<div class="tarjeta">
 
-    <p>
-        El laboratorio ha sido bloqueado por un virus.
-    </p>
+<h1>🔐 ESCAPE MATEMÁTICO</h1>
 
-    <p>
-        Solo los mejores matemáticos podrán recuperar el Código Maestro.
-    </p>
+<h2>Sistema de Seguridad</h2>
 
-    <button onclick="comenzar()">
-        COMENZAR MISIÓN
-    </button>
+<p class="descripcion">
 
-</div>
+El laboratorio permanece bloqueado.
 
-<div id="juego" class="pantalla oculto">
+Ingrese el Código Maestro obtenido durante la misión.
 
-    <h1>🔐 ESCAPE MATEMÁTICO</h1>
+</p>
 
-    <h2>Sistema de Seguridad</h2>
+<div class="estado">
 
-    <p class="estado">
-        Estado:
-        <span class="bloqueado">🔴 BLOQUEADO</span>
-    </p>
+Estado:
 
-    <h2 id="temporizador">
-        ⏳ 20:00
-    </h2>
+<span class="bloqueado">
 
-    <div class="pregunta">
+🔴 BLOQUEADO
 
-        <h3 id="tituloPregunta">
-            Desafío 1
-        </h3>
-
-        <p id="textoPregunta">
-        </p>
-
-        <input
-        id="respuesta"
-        type="text"
-        placeholder="Respuesta">
-
-        <br><br>
-
-        <button onclick="verificarRespuesta()">
-            RESPONDER
-        </button>
-
-    </div>
+</span>
 
 </div>
 
-<div id="victoria" class="pantalla oculto">
+<div class="cronometro">
 
-    <h1>🎉 MISIÓN COMPLETADA</h1>
+⏳ Tiempo restante
 
-    <h2>Laboratorio Desbloqueado</h2>
+<span id="tiempo">
 
-    <p>
-        Felicitaciones.
-    </p>
+20:00
+
+</span>
 
 </div>
 
-<div id="derrota" class="pantalla oculto">
+<input
+type="password"
+id="codigo"
+maxlength="5"
+placeholder="_____">
 
-    <h1>💥 MISIÓN FALLIDA</h1>
+<button onclick="verificarCodigo()">
 
-    <p>
-        El tiempo terminó.
-    </p>
+DESBLOQUEAR
+
+</button>
+
+<div id="mensaje"></div>
+
+</div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
