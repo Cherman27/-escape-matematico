@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Escape Matemático</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="pantalla">
+
+<div class="tarjeta">
+
+<h1>🔐 ESCAPE MATEMÁTICO</h1>
+
+<h2>Sistema de Seguridad</h2>
+
+<p class="descripcion">
+
+El laboratorio permanece bloqueado.
+
+Ingrese el Código Maestro obtenido durante la misión.
+
+</p>
+
+<div class="estado">
+
+Estado:
+
+<span class="bloqueado">
+
+🔴 BLOQUEADO
+
+</span>
+
+</div>
+
+<div class="cronometro">
+
+⏳ Tiempo restante
+
+<span id="tiempo">
+
+20:00
+
+</span>
+
+</div>
+
+<input
+type="password"
+id="codigo"
+maxlength="5"
+placeholder="_____">
+
+<button onclick="verificarCodigo()">
+
+DESBLOQUEAR
+
+</button>
+
+<div id="mensaje"></div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
