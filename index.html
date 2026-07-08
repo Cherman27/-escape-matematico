@@ -4,62 +4,58 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Escape Matemático</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="estilo.css">
 
 </head>
 
 <body>
 
-<div class="pantalla">
+<div class="fondo"></div>
 
-<div class="tarjeta">
+<div class="panel">
 
 <h1>🔐 ESCAPE MATEMÁTICO</h1>
 
 <h2>Sistema de Seguridad</h2>
 
-<p class="descripcion">
-
-El laboratorio permanece bloqueado.
-
+<p class="texto">
+Laboratorio Matemático bloqueado.
+<br>
 Ingrese el Código Maestro obtenido durante la misión.
-
 </p>
 
 <div class="estado">
 
-Estado:
+<span class="rojo"></span>
 
-<span class="bloqueado">
-
-🔴 BLOQUEADO
-
-</span>
+<span>BLOQUEADO</span>
 
 </div>
 
-<div class="cronometro">
+<div class="temporizador">
 
-⏳ Tiempo restante
-
-<span id="tiempo">
-
-20:00
-
-</span>
+⏳ Tiempo restante:
+<span id="tiempo">20:00</span>
 
 </div>
 
-<input
-type="password"
-id="codigo"
-maxlength="5"
-placeholder="_____">
+<div class="codigo">
+
+<input maxlength="1" id="c1">
+
+<input maxlength="1" id="c2">
+
+<input maxlength="1" id="c3">
+
+<input maxlength="1" id="c4">
+
+<input maxlength="1" id="c5">
+
+</div>
 
 <button onclick="verificarCodigo()">
 
@@ -68,8 +64,6 @@ DESBLOQUEAR
 </button>
 
 <div id="mensaje"></div>
-
-</div>
 
 </div>
 
