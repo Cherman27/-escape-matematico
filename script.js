@@ -1,108 +1,100 @@
-const preguntas = [
-    {
-        titulo: "Desafío 1",
-        pregunta: "¿Cuánto es 18 + 27?",
-        respuesta: "45"
-    },
-    {
-        titulo: "Desafío 2",
-        pregunta: "¿Cuánto es 9 × 8?",
-        respuesta: "72"
-    },
-    {
-        titulo: "Desafío 3",
-        pregunta: "¿Cuánto es 144 ÷ 12?",
-        respuesta: "12"
-    },
-    {
-        titulo: "Desafío 4",
-        pregunta: "¿Cuál es la raíz cuadrada de 81?",
-        respuesta: "9"
-    },
-    {
-        titulo: "Desafío 5",
-        pregunta: "¿Cuánto es 15²?",
-        respuesta: "225"
-    }
-];
+// ===== CONFIGURACIÓN =====
+const CODIGO = "84175";
 
-let actual = 0;
-let tiempo = 1200;
+// ===== CRONÓMETRO =====
+let minutos = 20;
+let segundos = 0;
 
-function comenzar(){
+const tiempo = document.getElementById("tiempo");
 
-    document.getElementById("inicio").classList.add("oculto");
-    document.getElementById("juego").classList.remove("oculto");
+const contador = setInterval(function(){
 
-    cargarPregunta();
+    if(segundos===0){
 
-    iniciarTemporizador();
+        if(minutos===0){
 
-}
+            clearInterval(contador);
 
-function cargarPregunta(){
-
-    document.getElementById("tituloPregunta").innerHTML =
-    preguntas[actual].titulo;
-
-    document.getElementById("textoPregunta").innerHTML =
-    preguntas[actual].pregunta;
-
-    document.getElementById("respuesta").value="";
-
-}
-
-function verificarRespuesta(){
-
-    let respuesta =
-    document.getElementById("respuesta").value.trim();
-
-    if(respuesta===preguntas[actual].respuesta){
-
-        actual++;
-
-        if(actual>=preguntas.length){
-
-            document.getElementById("juego").classList.add("oculto");
-            document.getElementById("victoria").classList.remove("oculto");
+            document.getElementById("mensaje").innerHTML =
+            "⏰ Se acabó el tiempo.";
 
             return;
 
         }
 
-        cargarPregunta();
+        minutos--;
+
+        segundos=59;
 
     }else{
 
-        alert("Respuesta incorrecta.");
+        segundos--;
 
     }
 
-}
+    let m=minutos.toString().padStart(2,"0");
+    let s=segundos.toString().padStart(2,"0");
 
-function iniciarTemporizador(){
+    tiempo.innerHTML=m+":"+s;
 
-    setInterval(function(){
+},1000);
 
-        tiempo--;
+// ===== VALIDAR CÓDIGO =====
 
-        let minutos=Math.floor(tiempo/60);
-        let segundos=tiempo%60;
+function verificarCodigo(){
 
-        if(segundos<10){
-            segundos="0"+segundos;
-        }
+    let codigo=document.getElementById("codigo").value;
 
-        document.getElementById("temporizador").innerHTML=
-        "⏳ "+minutos+":"+segundos;
+    let mensaje=document.getElementById("mensaje");
 
-        if(tiempo<=0){
+    if(codigo===CODIGO){
 
-            document.getElementById("juego").classList.add("oculto");
-            document.getElementById("derrota").classList.remove("oculto");
+        clearInterval(contador);
 
-        }
+        document.body.innerHTML=`
 
-    },1000);
+        <div style="display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:#062b16;
+        color:white;
+        font-family:Arial;
+        text-align:center;
+        padding:30px;">
+
+        <div>
+
+        <h1 style="font-size:55px;">🔓</h1>
+
+        <h1>¡ACCESO CONCEDIDO!</h1>
+
+        <h2>🎉 FELICIDADES 🎉</h2>
+
+        <p>
+
+        Han escapado del
+
+        <br><br>
+
+        <b>ESCAPE MATEMÁTICO</b>
+
+        </p>
+
+        </div>
+
+        </div>
+
+        `;
+
+    }
+
+    else{
+
+        mensaje.innerHTML="❌ Código incorrecto.";
+
+        mensaje.style.color="red";
+
+    }
 
 }
